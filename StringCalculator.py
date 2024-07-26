@@ -48,12 +48,17 @@ def Separate_Numbers(numbers, delimiter):
 def Check_Negative_Numbers(numbers_list):
 
     # Check for negative numbers
-    negatives = [num for num in numbers_list if num < 0]
-    if negatives:
-        raise ValueError(f"Negatives not allowed: {', '.join(map(str, negatives))}")
+    negative_numbers = [num for num in numbers_list if num < 0]
+    ErrorMessage(negative_numbers)
+    return negative_numbers
 
 def Check_Numbers_Upper_Limit (numbers_list):
     
     # Check for the upper limit of numbers
     upper_limit_of_numbers = [num for num in numbers_list if num <= Upper_limit]
     return upper_limit_of_numbers 
+
+def ErrorMessage(negative_numbers):
+    #Error message for negative numbers
+    if negative_numbers:
+        raise ValueError(f"Negatives not allowed: {', '.join(map(str, negative_numbers))}")
