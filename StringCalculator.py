@@ -1,7 +1,7 @@
 #global variable
 Upper_limit = 1000;
 
-def Add(numbers):
+def add(numbers):
 
     # If the input string is empty, return 0
     if not numbers:
